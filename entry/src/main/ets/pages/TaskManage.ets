@@ -79,7 +79,7 @@ struct PropPage {
           this.totalTask = this.tasks.length
         })
       // 3.任务列表
-      List({space:10}) {
+      List({ space: 10 }) {
         ForEach(
           this.tasks,
           (item: Task, index) => {
@@ -99,7 +99,7 @@ struct PropPage {
               .card()
               .justifyContent(FlexAlign.SpaceBetween)
             }
-
+            .swipeAction({end: this.DeleteButton(index)})
           }
         )
       }
@@ -107,11 +107,26 @@ struct PropPage {
       .layoutWeight(1)
       .alignListItem(ListItemAlign.Center)
 
-
     }
     .width('100%')
     .height('100%')
     .backgroundColor('#F1F2F3')
 
+  }
+  @Builder DeleteButton(index: number) {
+    Button(){
+      Image($r('app.media.delete'))
+        .fillColor(Color.White)
+        .width(20)
+    }
+    .width(40)
+    .height(40)
+    .type(ButtonType.Circle)
+    .backgroundColor(Color.Red)
+    .margin(5)
+    .onClick(() => {
+      this.tasks.splice(index,1)
+      this.handleTaskChange()
+    })
   }
 }
