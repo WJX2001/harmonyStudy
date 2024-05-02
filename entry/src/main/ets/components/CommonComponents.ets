@@ -1,3 +1,4 @@
+import router from '@ohos.router'
 @Component
 export struct Header {
   // 组件的成员变量 相当于react中的props
@@ -7,6 +8,9 @@ export struct Header {
       Image($r('app.media.ic_public_back'))
         .width(28)
         .interpolation(ImageInterpolation.High)
+        .onClick(() => {
+          router.back()
+        }).margin({left:20,right:10})
       Text(this.title)
         .fontSize(30)
         .fontWeight(FontWeight.Bold)
@@ -15,7 +19,9 @@ export struct Header {
       Image($r('app.media.reload'))
         .width(28)
         .interpolation(ImageInterpolation.High)
+        .margin({right:10})
     }
+    .justifyContent(FlexAlign.SpaceBetween)
     .width('100%')
     .height(30)
   }

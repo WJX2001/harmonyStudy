@@ -177,7 +177,6 @@ struct TaskList {
 struct TaskItem {
   @ObjectLink item: Task
   onTaskChange: () => void
-
   build() {
     Row() {
       if (this.item.finished) {

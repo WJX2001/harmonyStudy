@@ -1,5 +1,12 @@
 {
   "src": [
-    "pages/Index"
+    "pages/Index",
+    "pages/StatePage",
+    "pages/TaskManage",
+    "pages/LifeCirclePage",
+    "pages/Study/customBuildFunc",
+    "pages/AbilityStudy/UIAbilityStartMode",
+    "pages/AbilityStudy/DocumentListPage",
+    "pages/AbilityStudy/DocumentPage"
   ]
 }
